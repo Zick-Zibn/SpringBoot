@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1 th:text="${user.id} == null ? 'Add user' : 'update user'"></h1>
-<form th:action="@{/users/save}" method="post">
+<form th:action="@{/users/save}" th:object="${user}" method="post">
   <input type="hidden" name="id" th:value="${user.id}" />
   <p>
     Name: <input type="text" name="name" th:value="${user.name}" />
