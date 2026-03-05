@@ -37,7 +37,7 @@ public class UserController {
 
     @GetMapping("/edit")
     public String updateUser(@RequestParam("id") Long id, Model model) {
-        User user = userService.findById(id);
+        User user = userService.findUserById(id);
         model.addAttribute("user", user);
         return "user_form";
     }
